@@ -11,7 +11,7 @@ namespace WebApp1
         public static void Main(string[] args)
         {
             //1
-            //CreateWebHostBuilder(args).Build().Run();
+            // CreateWebHostBuilder(args).Build().Run();
 
             //2
             /*var host = new WebHostBuilder()

@@ -22,7 +22,7 @@ namespace WebApp2
         {
             //1
 
-            /*if (env.IsDevelopment())
+            /* if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
@@ -40,10 +40,10 @@ namespace WebApp2
                         + $"<h3>Путь запроса: {path}</h3>"
                         + $"<h3>Параметры строки запроса: {query}</h3>"
                     );
-            });*/
+            }); */
 
             //2
-            /*app.Use(async (context, next) => {
+            /* app.Use(async (context, next) => {
                 await context.Response.WriteAsync("Hello ");
                 await next();
             });
@@ -51,13 +51,14 @@ namespace WebApp2
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("World");
-            });*/
+            }); */
 
             //3
-            /*app.Map("/index", (appBuilder => {
+            app.Map("/index", (appBuilder => {
                 appBuilder.Run(async (context) =>
                 {
                     await context.Response.WriteAsync("<h1>Home</h1>");
+                    // context.Response.WriteAsync("<h1>Home</h1>");
                 });
             }));
 
@@ -81,12 +82,16 @@ namespace WebApp2
                         await context.Response.WriteAsync("<h1>Analytics</h1>");
                     });
                 }));
+                admin.Run(async (context) =>
+                {
+                    await context.Response.WriteAsync("<h1>Admin</h1>");
+                });
             }));
 
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("World");
-            });*/
+            });
 
             //4
             /*app.UseMiddleware<TokenMiddleware>();
